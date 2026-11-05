@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nicky Garcia</title>
+  <meta name="description" content="Nicky Garcia — Columbia Business School MBA candidate (Finance &amp; Strategy), former investment banker and corporate banker.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --columbia: #B9D9EB;
+      --columbia-soft: #E3F0F8;
+      --navy: #0B2545;
+      --blue: #1D4F91;
+      --bg: #FBFAF7;
+      --card: #FFFFFF;
+      --text: #1C2733;
+      --muted: #5A6878;
+      --line: #DCE6EE;
+      --shadow: 0 1px 2px rgba(11,37,69,.05), 0 8px 24px rgba(11,37,69,.06);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --columbia-soft: #13283F;
+        --navy: #E6F1F8;
+        --blue: #9CCAE6;
+        --bg: #0C1520;
+        --card: #121E2C;
+        --text: #DCE6EE;
+        --muted: #93A4B5;
+        --line: #22344A;
+        --shadow: none;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--blue); }
+    h1, h2, h3 { font-family: "Fraunces", Georgia, serif; color: var(--navy); line-height: 1.2; margin: 0; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+    /* ---------- Nav ---------- */
+    header.nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 16px; }
+    .brand { font-family: "Fraunces", serif; font-weight: 600; font-size: 1.15rem; color: var(--navy); text-decoration: none; white-space: nowrap; }
+    .brand span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--columbia); margin-right: 8px; box-shadow: 0 0 0 3px var(--columbia-soft); }
+    .nav ul { list-style: none; display: flex; gap: 4px; margin: 0; padding: 0; overflow-x: auto; }
+    .nav ul a {
+      display: block; padding: 6px 12px; border-radius: 999px;
+      color: var(--muted); text-decoration: none; font-size: .92rem; font-weight: 500; white-space: nowrap;
+      transition: background .2s, color .2s;
+    }
+    .nav ul a:hover { color: var(--navy); background: var(--columbia-soft); }
+    .nav ul a.active { color: var(--navy); background: var(--columbia); }
+    @media (prefers-color-scheme: dark) { .nav ul a.active { color: #0B2545; } }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 64px 0 40px; }
+    .hero .wrap { display: grid; grid-template-columns: 220px 1fr; gap: 48px; align-items: center; }
+    .photo {
+      width: 220px; height: 220px; border-radius: 50%; object-fit: cover;
+      border: 6px solid var(--columbia); box-shadow: var(--shadow);
+    }
+    .eyebrow { font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); margin: 0 0 10px; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+    .hero h1 small { display: block; font-size: .42em; font-family: "Inter", sans-serif; font-weight: 500; color: var(--muted); margin-top: 8px; letter-spacing: 0; }
+    .hero p.lede { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin: 18px 0 24px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: 999px; font-weight: 500; font-size: .95rem; text-decoration: none;
+      border: 1px solid var(--line); background: var(--card); color: var(--navy);
+      transition: transform .15s, border-color .15s;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: var(--blue); }
+    .btn.primary { background: var(--navy); color: var(--bg); border-color: var(--navy); }
+    .btn svg { width: 16px; height: 16px; }
+
+    /* ---------- Jump tiles ---------- */
+    .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding-bottom: 24px; }
+    .tile {
+      display: block; padding: 20px 22px; border-radius: 16px; text-decoration: none;
+      background: var(--columbia-soft); border: 1px solid var(--line); color: var(--text);
+      transition: transform .15s, background .15s;
+    }
+    .tile:hover { transform: translateY(-2px); background: var(--columbia); }
+    @media (prefers-color-scheme: dark) { .tile:hover { color: #0B2545; } .tile:hover b { color: #0B2545; } }
+    .tile .num { font-size: .78rem; font-weight: 600; color: var(--blue); letter-spacing: .1em; }
+    .tile b { display: block; font-family: "Fraunces", serif; font-size: 1.25rem; color: var(--navy); margin: 4px 0 2px; }
+    .tile span.sub { font-size: .9rem; color: var(--muted); }
+    .tile:hover span.sub, .tile:hover .num { color: #1D4F91; }
+
+    /* ---------- Sections ---------- */
+    section.block { padding: 56px 0 16px; }
+    .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 24px; }
+    .section-head .num { font-weight: 600; color: var(--blue); font-size: .9rem; }
+    .section-head h2 { font-size: 2rem; }
+    .section-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+    .card {
+      background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+      padding: 26px 28px; box-shadow: var(--shadow); margin-bottom: 18px;
+    }
+    .card-top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .card h3 { font-size: 1.35rem; }
+    .meta { text-align: right; font-size: .9rem; color: var(--muted); }
+    .meta .when { display: inline-block; background: var(--columbia-soft); color: var(--blue); font-weight: 600; padding: 2px 10px; border-radius: 999px; margin-bottom: 4px; }
+    .about { font-style: italic; color: var(--muted); margin: 4px 0 0; font-size: .95rem; }
+    .degree { font-weight: 600; margin: 10px 0 4px; }
+    .note { margin: 6px 0 0; color: var(--text); }
+    .note em { color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .chip { font-size: .85rem; padding: 4px 12px; border-radius: 999px; background: var(--columbia-soft); color: var(--navy); border: 1px solid var(--line); }
+
+    .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .edu-grid .card { margin: 0; }
+
+    .role { margin-top: 20px; padding-left: 18px; border-left: 3px solid var(--columbia); }
+    .role h4 { margin: 0; font-size: 1rem; color: var(--navy); }
+    .role h4 .yrs { font-weight: 500; color: var(--muted); }
+    .role ul { margin: 8px 0 0; padding-left: 18px; }
+    .role li { margin-bottom: 6px; }
+    .role li::marker { color: var(--blue); }
+
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .info-grid .card { margin: 0; }
+    .info-grid .label { font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+    .info-grid p { margin: 0; }
+
+    footer { margin-top: 56px; padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    footer a { color: var(--muted); }
+
+    .top-link {
+      position: fixed; right: 20px; bottom: 20px; width: 44px; height: 44px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--navy); color: var(--bg); text-decoration: none;
+      box-shadow: var(--shadow); opacity: 0; pointer-events: none; transition: opacity .2s;
+    }
+    .top-link.show { opacity: 1; pointer-events: auto; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 820px) {
+      .hero .wrap { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+      .photo { margin: 0 auto; width: 170px; height: 170px; }
+      .hero p.lede { margin-left: auto; margin-right: auto; }
+      .links { justify-content: center; }
+      .tiles, .edu-grid, .info-grid { grid-template-columns: 1fr; }
+      .meta { text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .wrap { padding: 0 16px; }
+      .brand { display: none; }
+      .nav .wrap { justify-content: center; }
+      .card { padding: 22px 20px; }
+      .section-head h2 { font-size: 1.6rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top"><span></span>Nicky Garcia</a>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#additional">More about me</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap">
+        <img class="photo" src="headshot.jpg" alt="Portrait of Nicky Garcia smiling, wearing a black top" width="220" height="220">
+        <div>
+          <p class="eyebrow">MBA Candidate · Columbia Business School</p>
+          <h1>Hi, I'm Nicky.
+            <small>Nicole Isabel (Nicky) T. Garcia</small>
+          </h1>
+          <p class="lede">
+            Finance &amp; Strategy MBA at Columbia, with a background in investment banking,
+            corporate banking, and equity research in Manila — and most recently a summer in
+            AWS Energy Finance in Seattle.
+          </p>
+          <div class="links" id="contact">
+            <a class="btn primary" href="mailto:NGarcia27@gsb.columbia.edu">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Email me
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/nicky-garcia-0245a9153/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Jump tiles -->
+    <div class="wrap">
+      <div class="tiles">
+        <a class="tile" href="#education"><span class="num">01</span><b>Education</b><span class="sub">Columbia MBA · Ateneo de Manila</span></a>
+        <a class="tile" href="#experience"><span class="num">02</span><b>Experience</b><span class="sub">AWS · AB Capital · BDO Unibank</span></a>
+        <a class="tile" href="#additional"><span class="num">03</span><b>More about me</b><span class="sub">Volunteering, travel &amp; Mini Schnauzers</span></a>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <section class="block" id="education">
+      <div class="wrap">
+        <div class="section-head"><span class="num">01</span><h2>Education</h2></div>
+        <div class="edu-grid">
+          <article class="card">
+            <div class="card-top">
+              <h3>Columbia Business School</h3>
+              <div class="meta"><span class="when">2025 – 2027</span><br>New York, NY</div>
+            </div>
+            <p class="degree">MBA, Finance &amp; Strategy, May 2027</p>
+            <p class="note"><em>Membership:</em></p>
+            <div class="chips">
+              <span class="chip">Management Consulting Association</span>
+              <span class="chip">Asian Business Association</span>
+              <span class="chip">Hospitality and Travel Association</span>
+              <span class="chip">Wine Society</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-top">
+              <h3>Ateneo de Manila University</h3>
+              <div class="meta"><span class="when">2014 – 2018</span><br>Manila, Philippines</div>
+            </div>
+            <p class="degree">BS, Management Engineering, May 2018</p>
+            <p class="note">Honors Program – highly selective; selected from top ~15% of applicants</p>
+            <p class="note"><em>Leadership:</em> Ateneo Chapter for UNICEF – organized community engagement programs for indigenous tribes</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="block" id="experience">
+      <div class="wrap">
+        <div class="section-head"><span class="num">02</span><h2>Experience</h2></div>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>Amazon Web Services</h3>
+              <p class="about">Leading cloud computing platform; AWS Energy manages the energy portfolio powering Amazon’s data centers</p>
+            </div>
+            <div class="meta"><span class="when">Summer 2026</span><br>Seattle, WA</div>
+          </div>
+          <div class="role">
+            <h4>Finance Manager Intern (Finance Leadership Development Program), AWS Energy Finance</h4>
+            <ul>
+              <li>Built and deployed an AI-powered tool to automate energy contract valuation, cutting turnaround time from 8+ hours to under 1 hour and standardizing financial models across a $41.3B portfolio</li>
+              <li>Drove cross-functional adoption across Finance, Accounting, and Business partner teams — from concept through stakeholder alignment, accuracy testing, and pilot rollout</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>AB Capital &amp; Investment Corporation</h3>
+              <p class="about">Full-service investment house: investment banking, wealth management, and securities brokering services</p>
+            </div>
+            <div class="meta"><span class="when">2022 – 2025</span><br>Manila, Philippines</div>
+          </div>
+          <div class="role">
+            <h4>Senior Associate, Investment Banking Division <span class="yrs">(2024 – 2025)</span></h4>
+            <ul>
+              <li>Structured financing options for a $92M home-improvement company by integrating market analysis, management insights, and valuation scenarios; advised C-suite to defer fundraising and prioritize operational improvements to optimize future valuation</li>
+              <li>Analyzed financial performance of a Philippine conglomerate to identify strategic priorities and funding needs; advised management on financing approach and executed $20M equity raise in alignment with 10-year growth plan</li>
+              <li>Spearheaded end-to-end firmwide rollout of streamlined valuation process by designing frameworks and templates to improve analytical consistency and reduce turnaround time, training cross-functional teams in new process</li>
+            </ul>
+          </div>
+          <div class="role">
+            <h4>Associate, Investment Banking Division <span class="yrs">(2023 – 2024)</span></h4>
+            <ul>
+              <li>Managed stakeholder communication for $145M sell-side process for the Philippines’ largest private education network including direction of cross-functional due diligence among 15+ Asia-based private equity firms, development of valuation model, and synthesis of findings into investor materials that highlighted the company’s strategic value</li>
+              <li>Evaluated four financial advisory deals for the firm across internet domains, consumer products, and property sectors by analyzing market sentiment and modeling financial scenarios, to expand deal pipeline with three new projects (~$2M fee revenue)</li>
+            </ul>
+          </div>
+          <div class="role">
+            <h4>Research Analyst, Securities &amp; Brokerage Division <span class="yrs">(2022 – 2023)</span></h4>
+            <ul>
+              <li>Initiated coverage on mining industry as new sector to respond to market demand; published equity research on a gold mining company by analyzing historical financials and building DCF model that contributed to 35% stock price increase over six months</li>
+              <li>Generated and presented monthly briefings on US and Asia equity market trends and Philippine company-specific developments to the CEO and division heads, to inform deal origination within the Philippine market and broader Asia investment strategy</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-top">
+            <div>
+              <h3>BDO Unibank, Inc.</h3>
+              <p class="about">Largest universal bank in the Philippines</p>
+            </div>
+            <div class="meta"><span class="when">2019 – 2021</span><br>Manila, Philippines</div>
+          </div>
+          <div class="role">
+            <h4>Relationship Manager, Corporate Banking Division</h4>
+            <ul>
+              <li>Executed end-to-end corporate loan financing, including $6M project finance facility for Indian manufacturer’s first Philippine investment, $213M syndicated loan for an energy company, and $35M bilateral loan for hospital network by structuring financing terms aligned with client objectives, conducting due diligence, and coordinating cross-functional teams from origination to funding</li>
+              <li>Managed portfolio of eight corporate clients ($408M loans) by analyzing financial performance, engaging with management to assess strategic priorities, and structuring customized debt solutions to increase loan portfolio by 26% in eight months</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Additional Information -->
+    <section class="block" id="additional">
+      <div class="wrap">
+        <div class="section-head"><span class="num">03</span><h2>More about me</h2></div>
+        <div class="info-grid">
+          <div class="card">
+            <div class="label">Work authorization</div>
+            <p>US Citizen</p>
+          </div>
+          <div class="card">
+            <div class="label">Volunteer work</div>
+            <p>Led regional and local workshops on leadership and peace education for UNESCO-affiliated group (2015 – 2018)</p>
+          </div>
+          <div class="card">
+            <div class="label">Interests</div>
+            <div class="chips" style="margin-top:0">
+              <span class="chip">Trying new restaurants</span>
+              <span class="chip">Traveling (22 countries and counting)</span>
+              <span class="chip">Playing board games</span>
+              <span class="chip">Mini Schnauzers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© 2026 Nicky Garcia · New York, NY</span>
+      <span><a href="mailto:NGarcia27@gsb.columbia.edu">NGarcia27@gsb.columbia.edu</a> · <a href="https://www.linkedin.com/in/nicky-garcia-0245a9153/" target="_blank" rel="noopener">LinkedIn</a></span>
+    </div>
+  </footer>
+
+  <a class="top-link" href="#top" aria-label="Back to top">↑</a>
+
+  <script>
+    // Highlight the current section in the nav and show the back-to-top button
+    const links = [...document.querySelectorAll('.nav ul a')];
+    const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const topLink = document.querySelector('.top-link');
+    function onScroll() {
+      const y = window.scrollY + 120;
+      let current = null;
+      sections.forEach(s => { if (s.id !== 'contact' && s.offsetTop <= y) current = s.id; });
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+      topLink.classList.toggle('show', window.scrollY > 500);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>

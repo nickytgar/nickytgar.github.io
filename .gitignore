@@ -1,0 +1,4 @@
+# Never publish (see AGENTS.md)
+*.pdf
+IMG_*.JPG
+IMG_*.jpg
