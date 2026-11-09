@@ -42,8 +42,8 @@ https://nickytgar.github.io. Any AI agent editing this folder follows these rule
 - **Navigation:** streamlined — one sticky top bar, a handful of section links,
   smooth scroll. No dropdowns or hamburger menus unless the page grows past ~6
   sections.
-- **Content order:** follows the CV — Education, Experience, Additional
-  Information.
+- **Content order:** follows the CV — Education, Experience, then Portfolio
+  (added at Nicky's request), then Additional Information ("More about me").
 - **Tech:** plain HTML + CSS (+ minimal vanilla JS). No build step, no
   frameworks. Must work as a static GitHub Pages site and on phone screens.
 - **Images:** web-sized (under ~200 KB), with descriptive `alt` text.
