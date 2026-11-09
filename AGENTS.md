@@ -33,12 +33,17 @@ https://nickytgar.github.io. Any AI agent editing this folder follows these rule
 
 ## 3. Style
 
-- **Vibe:** professional but casual — warm, confident, plain-spoken. No
-  buzzword piles, no exclamation-point marketing.
+- **Vibe:** professional but fun — warm, confident, plain-spoken, with playful
+  visuals (sticker-style cards with hard offset shadows, slight tilts, light
+  motion). No buzzword piles, no exclamation-point marketing.
+- **Fonts:** Bricolage Grotesque for headings, Inter for body (Google Fonts).
 - **Colors:** Columbia blue (`#B9D9EB`) as the signature accent, deep Columbia
-  navy (`#1D4F91` / `#0B2545`) for text and contrast, warm off-white background.
-  Text must keep at least WCAG AA contrast — never put white or light text on
-  Columbia blue.
+  navy (`#1D4F91` / `#0B2545`) for text, borders and contrast, warm cream
+  background. Supporting accents, one per section: sun `#FFD166` (Education),
+  Columbia blue (Experience), coral `#FF9F7F` (Portfolio), mint `#9EE0C3`
+  (More about me). Text on any accent is always navy `#0B2545`. Text must keep
+  at least WCAG AA contrast — never put white or light text on Columbia blue.
+- **Motion:** keep it light and always honor `prefers-reduced-motion`.
 - **Navigation:** streamlined — one sticky top bar, a handful of section links,
   smooth scroll. No dropdowns or hamburger menus unless the page grows past ~6
   sections.
